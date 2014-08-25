@@ -141,7 +141,7 @@ CastPlayer.prototype.initializeCastPlayer = function() {
   // default set to the default media receiver app ID
   // optional: you may change it to point to your own
   //var applicationID = chrome.cast.media.DEFAULT_MEDIA_RECEIVER_APP_ID;
-  var applicationID = '4F8B3483';
+  var applicationID = '5B7CDD06';
 
   // auto join policy can be one of the following three
   var autoJoinPolicy = chrome.cast.AutoJoinPolicy.ORIGIN_SCOPED;
