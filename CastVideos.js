@@ -140,20 +140,24 @@ CastPlayer.prototype.initializeCastPlayer = function() {
   }
   // default set to the default media receiver app ID
   // optional: you may change it to point to your own
-  // var applicationID = chrome.cast.media.DEFAULT_MEDIA_RECEIVER_APP_ID;
-  var applicationID = '5B7CDD06';
+  var applicationID = chrome.cast.media.DEFAULT_MEDIA_RECEIVER_APP_ID;
+  // var applicationID = '5B7CDD06';
 
   // auto join policy can be one of the following three
   var autoJoinPolicy = chrome.cast.AutoJoinPolicy.ORIGIN_SCOPED;
   //var autoJoinPolicy = chrome.cast.AutoJoinPolicy.PAGE_SCOPED;
   //var autoJoinPolicy = chrome.cast.AutoJoinPolicy.TAB_AND_ORIGIN_SCOPED;
 
+  // var defaultActionPolicy = chrome.cast.DefaultActionPolicy.CAST_THIS_TAB;
+  var defaultActionPolicy = chrome.cast.DefaultActionPolicy.CREATE_SESSION;
+
   // request session
   var sessionRequest = new chrome.cast.SessionRequest(applicationID);
   var apiConfig = new chrome.cast.ApiConfig(sessionRequest,
     this.sessionListener.bind(this),
     this.receiverListener.bind(this),
-    autoJoinPolicy);
+    autoJoinPolicy,
+    defaultActionPolicy);
 
   chrome.cast.initialize(apiConfig, this.onInitSuccess.bind(this), this.onError.bind(this));
 
