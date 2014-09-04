@@ -144,9 +144,9 @@ CastPlayer.prototype.initializeCastPlayer = function() {
   // var applicationID = '5B7CDD06';
 
   // auto join policy can be one of the following three
-  // var autoJoinPolicy = chrome.cast.AutoJoinPolicy.ORIGIN_SCOPED;
+  var autoJoinPolicy = chrome.cast.AutoJoinPolicy.ORIGIN_SCOPED;
   // var autoJoinPolicy = chrome.cast.AutoJoinPolicy.PAGE_SCOPED;
-  var autoJoinPolicy = chrome.cast.AutoJoinPolicy.TAB_AND_ORIGIN_SCOPED;
+  // var autoJoinPolicy = chrome.cast.AutoJoinPolicy.TAB_AND_ORIGIN_SCOPED;
 
   // var defaultActionPolicy = chrome.cast.DefaultActionPolicy.CAST_THIS_TAB;
   var defaultActionPolicy = chrome.cast.DefaultActionPolicy.CREATE_SESSION;
